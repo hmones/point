@@ -19,3 +19,8 @@ columns:
         type: timesince
         searchable: true
         sortable: true
+    year:
+        label: Year
+        type: number
+        searchable: true
+        sortable: true

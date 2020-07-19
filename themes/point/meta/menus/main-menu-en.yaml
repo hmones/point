@@ -16,8 +16,10 @@ items:
         title: 'Point Conference'
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: conference
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -27,8 +29,10 @@ items:
         title: 'Program 2020'
         nesting: '0'
         type: static-page
+        url: ''
         code: ''
         reference: program
+        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
@@ -68,6 +72,17 @@ items:
         code: ''
         reference: participate
         cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Volunteers
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: volunteers
         replace: '0'
         viewBag:
             isHidden: '0'

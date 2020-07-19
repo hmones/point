@@ -3,3 +3,4 @@ static-pages:
     location: {  }
     conference: {  }
     program: {  }
+    volunteers: {  }

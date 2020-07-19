@@ -3,3 +3,6 @@
 1.0.2:
     - 'Created table hmones_conference_speakers'
     - builder_table_create_hmones_conference_speakers.php
+1.0.3:
+    - 'Updated table hmones_conference_speakers'
+    - builder_table_update_hmones_conference_speakers.php
