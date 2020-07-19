@@ -1,0 +1,11 @@
+plugin:
+    name: 'hmones.conference::lang.plugin.name'
+    description: 'hmones.conference::lang.plugin.description'
+    author: hmones
+    icon: oc-icon-align-justify
+    homepage: ''
+navigation:
+    speakers:
+        label: Speakers
+        url: hmones/conference/speakers
+        icon: icon-user

@@ -1,0 +1,184 @@
+/*-------------------
+    Navigation
+--------------------*/
+.ui.simple.dropdown.item > div.menu {
+    border-top: solid 2px #fdd2ba;
+}
+
+.ui.top.fixed.menu.topMainMenu{
+    border: none;
+    box-shadow: none;
+}
+.socialMediaIcons{
+    margin-left:19%;
+}
+.right.menu > div.item > a{
+    color:black;
+    font-weight: bold;
+}
+.right.menu > div.item > a:hover{
+    color:#ed1d24;
+    right:0px;
+}
+.menu>.item>a{
+    color:black;
+    font-weight: normal;
+}
+.menu>.item>a:hover{
+    color:#ed1d24;
+}
+.navSearch{
+    height: 26px;
+    margin-right: 25px;
+}
+div.ui.top.menu.mobileMenu{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    box-shadow: none;
+}
+.mobileMenuContent a{
+    color:black;
+}
+.mobileMenuContent a:hover{
+    color:#ed1d24;
+}
+.mobileMenuContent .ui.simple.dropdown.item:hover{
+    background: #ffffff;
+
+}
+div.mobileMenu>div>.right.menu {
+    margin-right: 10px;
+    margin-top: 8px;
+}
+div.ui.bottom.sidebar.inverted.vertical.menu.mobileMenuContent{
+    top:60px !important;
+}
+
+/* Mobile */
+
+@media (min-width: 898px){
+    div.topMainMenu{
+        display: block !important;
+    }
+    div.mobileMenu{
+        display: none !important;
+    }
+}
+@media (max-width: 898px){
+    div.topMainMenu{
+        display: none !important;
+    }
+    div.mobileMenu{
+        display: block !important;
+    }
+}
+
+/*-------------------
+    Links
+--------------------*/
+
+.linkAnimation{
+    position:relative;
+    right:0;
+    transition: right ease 0.5s;
+}
+.linkAnimation:hover{
+    right:-10px;
+}
+
+/*-------------------
+    Layouts
+--------------------*/
+
+.pageContent{
+    margin-top:60px;
+    padding-top:60px;
+    padding-bottom: 60px;
+}
+
+/* Mobile */
+@media (max-width: 898px){
+    div.pageContent{
+        margin-top:0px;
+    }
+}
+
+/*-------------------
+    Home
+--------------------*/
+
+div.home.hero{
+    margin-top:-60px !important;
+    padding-top:150px;
+    padding-bottom:120px;
+    min-height:70vh;
+    line-height: 60vh;
+    background-image: url('/themes/point/assets/images/hero.jpg');
+    background-color: #000000;
+}
+div.home.hero>h1{
+    font-size: 8rem !important;
+}
+div.home.hero>p{
+    font-size: 2rem !important;
+}
+
+div.home.slider{
+    height: 385px;
+}
+.SliderPrev,
+.SliderNext
+{
+    position: absolute;
+    top: 40%;
+    z-index: 1000;
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+
+    cursor: pointer;
+
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.SliderPrev
+{
+    left: 10px;
+}
+.SliderNext
+{
+    right: 60px;
+}
+
+div.ui.basic.segment.sliderCard{
+    margin-top:0px !important;
+    background-color: #eeeeee;
+    height:100px;
+}
+/* Mobile */
+@media (max-width: 898px){
+    div.home.hero>h1{
+        font-size: 3rem !important;
+    }
+    div.home.hero>p{
+        font-size: 1.5rem !important;
+    }
+}
+
+/*-------------------
+    Speakers Page
+--------------------*/
+
+div.speakerCard>a>h3,p{
+    margin-bottom:0px;
+}

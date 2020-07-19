@@ -1,0 +1,10 @@
+name: Speakers
+form: $/hmones/conference/models/speaker/fields.yaml
+modelClass: Hmones\Conference\Models\Speaker
+defaultRedirect: hmones/conference/speakers
+create:
+    redirect: 'hmones/conference/speakers/update/:id'
+    redirectClose: hmones/conference/speakers
+update:
+    redirect: hmones/conference/speakers
+    redirectClose: hmones/conference/speakers

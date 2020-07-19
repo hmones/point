@@ -1,0 +1,24 @@
+title = "News"
+url = "/news/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "news"
+==
+<div class="ui container">
+    <div class="ui basic very padded segment">
+        <h1>{{post.title}}</h1>
+    <i class="calendar outline icon"></i> {{post.created_at|date('d F Y')}}
+    <br><br>
+    <img src="{{post.featured_images?post.featured_images[0].path:'/themes/point/assets/images/hero.jpg'}}" class="ui image" alt="">
+    <div class="ui basic segment">
+        {{post.content|md}}
+    </div>
+    {% partial 'socialMediaShare' %}
+    </div>
+    
+</div>

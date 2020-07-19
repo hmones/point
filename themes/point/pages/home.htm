@@ -1,0 +1,103 @@
+title = "Home"
+url = "/"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 15
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "news"
+postPage = "article"
+==
+use Hmones\Conference\Models\Speaker;
+
+public function onStart(){
+    $this['speakers']=Speaker::take(12)->get();
+}
+==
+{% put styles %}
+<link rel="stylesheet" href="{{['assets/css/slick.css','assets/css/slick-theme.css']|theme}}">
+{% endput %}
+{% put scripts %}
+<script src="{{['assets/js/slick.min.js']|theme}}"></script>
+<script>
+    $(document).ready(function(){
+        $('div.home.slider').slick({
+            infinite: true,
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            autoplay: false,
+            dots:false,
+            arrows:true,
+            autoplaySpeed: 2000,
+            lazyLoad: 'ondemand',
+            nextArrow: '<a class="SliderNext"><i class="inverted right angle huge icon"></i></a>',
+            prevArrow: '<a class="SliderPrev"><i class="inverted left angle huge icon"></i></a>',
+            responsive: [
+                {
+                    breakpoint: 1052,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                        infinite: true
+                    }
+                },
+                {
+                    breakpoint: 898,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true
+                    }
+                },
+                {
+                    breakpoint: 607,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true
+                    }
+                }
+            ]
+        });
+    });
+</script>
+{% endput %}
+<div class="home hero">
+    <h1 class="ui centered inverted header">{{'HomePage.Header'|_}}</h1>
+    <p class="ui centered inverted header">{{'HomePage.SubHeader'|_}}</p>
+</div>
+<div class="home slider">
+    {% for post in posts %}
+    <div>
+        <a href="{{'article'|page({slug:post.slug})}}">
+            <img class="ui centered image" data-lazy="{{ post.featured_images ? post.featured_images[0].getThumb(400,300, {mode:'crop'}):'/themes/point/assets/images/hero.jpg'}}" alt="" height="285px" width="100%">
+            <div class="ui basic segment sliderCard" >
+                {{post.published_at |date('d F Y')}}
+                <div class="hidden divider"></div>
+                {{str_limit(post.title,50) }}
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+<h1 class="ui centered header">{{'HomePage.SpeakersSection'|_}}</h1>
+<div class="ui six column wide stackable grid" style="padding: 10px;">
+{% for speaker in speakers %}
+<div class="column">
+    <a href="{{'speaker'|page({slug:speaker.slug})}}"><img src="{{speaker.image?speaker.image.getThumb(300,300, {mode:'crop'}):'/themes/point/assets/images/hero.jpg'}}" alt="" class="ui centered center aligned image"/></a>
+    <a href="{{'speaker'|page({slug:speaker.slug})}}">{{speaker.name}}</a>
+    <br>
+    <small>{{speaker.organization}}</small>
+    <br>
+    <small><i class="globe small icon"></i>{{speaker.country}}</small>
+</div>
+{% endfor %}
+</div>
+<div style="margin-top:60px;margin-bottom: -160px;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5608.181902064597!2d44.43392236344871!3d33.30195155111086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1557819e0039f759%3A0x609aadde4a63fbc0!2sThe%20Station!5e0!3m2!1sen!2sde!4v1595149925274!5m2!1sen!2sde" width="100%" height="400px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>

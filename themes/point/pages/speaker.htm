@@ -1,0 +1,37 @@
+title = "Speaker"
+url = "/speakers/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+use Hmones\Conference\Models\Speaker;
+
+public function onStart(){
+    if($this->param('slug')){
+        $this['speaker'] = Speaker::where('slug',$this->param('slug'))->first();
+    }
+}
+==
+<div class="ui container">
+    
+        <div class="ui stackable grid">
+            <div class="four wide column">
+                <h1>{{speaker.name}}</h1>
+                <div><i class="address card icon"></i> {{speaker.organization}}</div>
+                <div><i class="globe icon"></i> {{speaker.country}}</div>
+                <br>
+                <div class="ui image"><img src="{{speaker.image.getThumb(300,300,{mode:'crop'})}}" class="ui image" alt=""></div>
+            </div>
+            <div class="twelve wide column">
+                <div class="ui basic segment">
+                    {{speaker.content | raw}}
+                </div>
+                {% partial 'socialMediaShare' %}
+            </div>
+
+        </div>
+        
+  
+    
+</div>

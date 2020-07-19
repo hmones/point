@@ -1,0 +1,21 @@
+columns:
+    name:
+        label: Name
+        type: text
+        searchable: true
+        sortable: true
+    organization:
+        label: Organization
+        type: text
+        searchable: true
+        sortable: true
+    country:
+        label: Country
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'Created at'
+        type: timesince
+        searchable: true
+        sortable: true

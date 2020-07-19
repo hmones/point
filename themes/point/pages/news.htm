@@ -1,0 +1,28 @@
+title = "News"
+url = "/news"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 20
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "news"
+postPage = "article"
+==
+<div class="ui container">
+    <div class="ui three column wide stackable grid">
+        {% for post in posts %}
+            <div class="column">
+                <img src="{{post.featured_images?post.featured_images[0].getThumb(400,300, {mode:'crop'}):'/themes/point/assets/images/hero.jpg'}}" class="ui centered image" alt="">
+                <br>
+                <small><i class="outline calendar icon"></i>{{post.published_at |date('d F Y')}}</small>
+                <br>
+                <a href="{{'article'|page({slug:post.slug})}}">{{post.title}}</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>

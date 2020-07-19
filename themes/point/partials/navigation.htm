@@ -1,0 +1,57 @@
+<div class="ui top fixed borderless menu inverted topMainMenu">
+    <div class="ui container">
+        <a class="item" href="{{'home'|page}}">
+            <img class="ui image" src="{{'assets/images/logo.png'|theme}}" width="170px">
+        </a>
+        <div class="right menu">
+            {% partial 'menu-items' items=items %}
+            <a class="item" href="#" data-request="onSwitchLocale" data-request-data="locale: 'en'">En</a>
+            <a class="item" href="#" data-request="onSwitchLocale" data-request-data="locale: 'ar'">ع</a>
+        </div>
+    </div>
+    
+</div>
+
+<div class="ui top borderless menu inverted mobileMenu">
+    <div class="ui container">
+        <a class="item" href="{{'home'|page}}">
+            <img class="ui image" src="{{'assets/images/logo.png'|theme}}" width="170px">
+        </a>
+        <div class="right menu">
+            <a href="#" onclick="onToggleMenu();" style="color:white;"><i class="bars big icon" style="margin-top: 40%;"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="ui left sidebar vertical blue borderless inverted menu mobileMenuContent">
+    <div class="item">
+        <img class="ui image" src="{{'assets/images/logo.png'|theme}}" width="170px">
+    </div>
+
+    {% partial 'menu-items' items=items type="mobile" %}
+    <div class="ui divider"></div>
+    <div class="item">
+        <a href="#" data-request="onSwitchLocale" data-request-data="locale: 'ar'">ع</a>
+        &nbsp;|&nbsp;
+        <a href="#" data-request="onSwitchLocale" data-request-data="locale: 'en'">En</a>
+    </div>
+    
+    <div class="item">
+        {% partial 'socialMediaLinks' %}
+    </div>    
+    <br><br>
+</div>
+
+{% put scripts %}
+<script>
+    function onToggleMenu() {
+        $('.ui.left.sidebar')
+        .sidebar({
+            dimPage: true,
+            transition: 'overlay'
+        })
+        .sidebar('toggle')
+        ;
+    };
+</script>
+{% endput %}

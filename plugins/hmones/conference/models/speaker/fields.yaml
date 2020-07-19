@@ -1,0 +1,39 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        required: 1
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        readOnly: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+    organization:
+        label: Organization
+        span: auto
+        required: 1
+        type: text
+    country:
+        label: Country
+        span: auto
+        type: text
+    content:
+        label: 'Page Content'
+        span: full
+        size: ''
+        required: 1
+        type: richeditor
+    image:
+        label: Image
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload
+        comment: 'Please upload a 300x300 square image'

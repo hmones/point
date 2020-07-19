@@ -1,0 +1,76 @@
+items:
+    -
+        title: News
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: news
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Point Conference'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: conference
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Program 2020'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: program
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Speakers
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: speakers
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Location
+        nesting: '0'
+        type: static-page
+        url: ''
+        code: ''
+        reference: location
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Participate
+        nesting: '0'
+        type: static-page
+        url: ''
+        code: ''
+        reference: participate
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Main menu'

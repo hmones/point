@@ -1,0 +1,27 @@
+title = "Speakers"
+url = "/speakers"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+use Hmones\Conference\Models\Speaker;
+
+public function onStart(){
+    $this['speakers'] = Speaker::all();
+}
+==
+<div class="ui container">
+    <div class="ui four column wide stackable grid">
+        {% for speaker in speakers %}
+            <div class="column speakerCard">
+                <a href="{{'speaker'|page({slug:speaker.slug})}}">
+                    <img src="{{speaker.image?speaker.image.getThumb(300,300,{mode:'crop'}):'/themes/point/assets/images/hero.jpg'}}" class="ui centered image" alt="">
+                    <h3>{{speaker.name}}</h3>
+                    <p>{{speaker.organization}}</p>
+                    <small>{{speaker.country}}</small>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
