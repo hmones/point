@@ -8,20 +8,38 @@ robot_follow = "follow"
 use Hmones\Conference\Models\Speaker;
 
 public function onStart(){
-    $this['speakers'] = Speaker::all();
+    $this['speakers'] = Speaker::orderBy('year','desc')->get();
+    $this['years'] = Speaker::select('year')->orderBy('year','desc')->distinct()->get();
 }
 ==
 <div class="ui container">
-    <div class="ui four column wide stackable grid">
-        {% for speaker in speakers %}
-            <div class="column speakerCard">
-                <a href="{{'speaker'|page({slug:speaker.slug})}}">
-                    <img src="{{speaker.image?speaker.image.getThumb(300,300,{mode:'crop'}):'/themes/point/assets/images/hero.jpg'}}" class="ui centered image" alt="">
-                    <h3>{{speaker.name}}</h3>
-                    <p>{{speaker.organization}}</p>
-                    <small>{{speaker.country}}</small>
-                </a>
-            </div>
-        {% endfor %}
+    <div class="ui centered center aligned basic segment">
+        <div class="ui breadcrumb">
+            {% for year in years %}
+                {% if loop.index != 1 %} <div class="divider"> / </div> {% endif %}
+                <a class="section" href="#{{year.year}}">{{year.year}}</a>
+            {% endfor %}
+          </div>
     </div>
+    {% for year in years %}
+            <a id={{year.year}}></a>
+            <br><br><br>
+            <h1 class="ui header">{{year.year}}</h1>
+            <div class="ui divider"></div>
+            <br>
+            <div class="ui four column wide stackable grid">
+                {% for speaker in speakers %}
+                    {% if speaker.year == year.year %}
+                        <div class="column speakerCard">
+                            <a href="{{'speaker'|page({slug:speaker.slug})}}">
+                                <img src="{{speaker.image?speaker.image.getThumb(300,300,{mode:'crop'}):'/themes/point/assets/images/hero.jpg'}}" class="ui centered image" alt="">
+                                <h3>{{speaker.name}}</h3>
+                                <p>{{speaker.organization}}</p>
+                                <small>{{speaker.country}}</small>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+    {% endfor %}
 </div>
