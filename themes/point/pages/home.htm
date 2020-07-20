@@ -26,15 +26,14 @@ public function onStart(){
 <script src="{{['assets/js/slick.min.js']|theme}}"></script>
 <script>
     $(document).ready(function(){
-        var direction = {{activeLocale == 'ar' ? true:false}}; 
+        var direction = {{activeLocale == 'ar' ? 'true':'false'}}; 
         $('div.home.slider').slick({
-            infinite: true,
             slidesToShow: 5,
             slidesToScroll: 5,
             autoplay: false,
-            rtl:direction,
             dots:false,
             arrows:true,
+            rtl:direction,
             autoplaySpeed: 2000,
             lazyLoad: 'ondemand',
             nextArrow: '<a class="SliderNext"><i class="inverted right angle huge icon"></i></a>',
@@ -45,8 +44,7 @@ public function onStart(){
                     settings: {
                         rtl: direction,
                         slidesToShow: 4,
-                        slidesToScroll: 4,
-                        infinite: true
+                        slidesToScroll: 4
                     }
                 },
                 {
@@ -54,8 +52,7 @@ public function onStart(){
                     settings: {
                         rtl:direction,
                         slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true
+                        slidesToScroll: 3
                     }
                 },
                 {
@@ -63,8 +60,7 @@ public function onStart(){
                     settings: {
                         rtl:direction,
                         slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true
+                        slidesToScroll: 1
                     }
                 }
             ]
@@ -76,7 +72,8 @@ public function onStart(){
     <h1 class="ui centered inverted header">{{'HomePage.Header'|_}}</h1>
     <p class="ui centered inverted header">{{'HomePage.SubHeader'|_}}</p>
 </div>
-<div class="home slider" {{activeLocale == 'ar'? 'dir="rtl"':''}}>
+
+<div class="home slider">
     {% for post in posts %}
     <div>
         <a href="{{'article'|page({slug:post.slug})}}">
@@ -90,6 +87,7 @@ public function onStart(){
     </div>
     {% endfor %}
 </div>
+
 <h1 class="ui centered header">{{'HomePage.SpeakersSection'|_}}</h1>
 <div class="ui six column wide stackable grid" style="padding: 10px;">
 {% for speaker in speakers %}
