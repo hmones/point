@@ -16,7 +16,7 @@ postPage = "article"
 use Hmones\Conference\Models\Speaker;
 
 public function onStart(){
-    $this['speakers']=Speaker::take(12)->get();
+    $this['speakers']=Speaker::orderBy('year','desc')->take(12)->get();
 }
 ==
 {% put styles %}
