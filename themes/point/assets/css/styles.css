@@ -182,3 +182,6 @@ div.ui.basic.segment.sliderCard{
 div.speakerCard>a>h3,p{
     margin-bottom:0px;
 }
+div.ui.column.nopadding{
+    padding-right: 2px !important;
+    padding-left: 2px !important;}
