@@ -1,0 +1,19 @@
+columns:
+    id:
+        label: ID
+        type: number
+        searchable: true
+        sortable: true
+    session_title:
+        label: 'Title of the Session'
+        type: text
+        searchable: true
+        sortable: true
+    from:
+        label: From
+        type: time
+        sortable: true
+    to:
+        label: To
+        type: time
+        sortable: true

@@ -79,11 +79,9 @@ items:
             isExternal: '0'
     -
         title: Volunteers
-        nesting: '0'
-        type: static-page
+        type: cms-page
         code: ''
         reference: volunteers
-        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''

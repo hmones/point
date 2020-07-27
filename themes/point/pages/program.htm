@@ -1,0 +1,75 @@
+title = "Program"
+url = "/program2"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+use Hmones\Conference\Models\Day;
+
+public function onStart(){
+    $this['days'] = Day::with('sessions')->orderBy('date','asc')->get();
+}
+==
+<div class="ui container">
+    <h1 class="ui header">{{'Program 2020'|_}}</h1>
+<div class="ui basic segment">
+    <div class="ui breadcrumb">
+        {% for day in days %}
+            {% if loop.index != 1 %} <div class="divider"> / </div> {% endif %}
+            <a class="section" href="#{{day.id}}">{{day.title}}</a>
+        {% endfor %}
+      </div>
+</div>
+{% for day in days %}
+    <a id={{day.id}}></a>
+    <h2><strong>{{day.title}}</strong></h2>
+    <div class="ui divider">
+        <br>
+    </div>
+    {% for session in day.sessions %}
+        <h3><strong>&nbsp;<i class="clock icon"></i> {{session.session_header}}: {{session.from | date('h:i a')}} - {{session.to | date('h:i a e')}}</strong></h3>
+
+        <h4><strong>&nbsp;<i class="{{activeLocale == 'ar' ? 'left':'right'}} angel arrow icon"></i> {{session.session_title}}</strong></h4>
+        <div class="ui divider">
+            <br>
+        </div>
+
+        {% if session.facilitators %}
+        <p><strong>&nbsp;<i class="user grey icon"></i> {{'ProgramPage.Facilitator'|_}}:&nbsp;</strong>
+            {% for facilitator in session.facilitators %}
+                {{loop.index != 1 ? ',':''}}
+                <a href="{{facilitator.link}}" rel="noopener noreferrer" target="_blank">
+                    <strong>{{facilitator.name}}</strong>
+                </a>
+                <strong>&nbsp;({{facilitator.affiliation}})</strong>
+            {% endfor %}
+        </p>
+        {% endif %}
+
+        <p>
+            <br>
+            <strong><i class="users grey icon"></i> {{'ProgramPage.Speakers'|_}}:</strong>
+        </p>
+        <div class="ui relaxed list">
+            {% for speaker in session.speakers %}
+            <div class="item">
+                <img class="ui avatar image fr-fic fr-dii" src="{{speaker.image.getThumb(50,50,{mode:'crop'})}}">
+                <div class="content">
+                    <a class="header" href="{{'speaker'|page({slug:speaker.name})}}" rel="noopener noreferrer" target="_blank">
+                        {{speaker.name}}
+                    </a>
+                    <div class="description">
+                        ({{speaker.organization}})
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="ui horizontal divider header"><i class="angle double down blue icon"></i></div>
+    {% endfor %}
+{% endfor %}
+
+
+
+</div>

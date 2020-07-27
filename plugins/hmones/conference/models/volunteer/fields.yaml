@@ -1,0 +1,21 @@
+fields:
+    name:
+        label: Name
+        span: auto
+        required: 1
+        type: text
+    about:
+        label: About
+        span: auto
+        required: 1
+        type: text
+    image:
+        label: Image
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        required: 1
+        type: fileupload

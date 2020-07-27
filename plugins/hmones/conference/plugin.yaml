@@ -9,3 +9,20 @@ navigation:
         label: Speakers
         url: hmones/conference/speakers
         icon: icon-user
+    volunteers:
+        label: Volunteers
+        url: hmones/conference/volunteers
+        icon: icon-life-ring
+    sessions:
+        label: Sessions
+        url: hmones/conference/sessions
+        icon: icon-calendar
+        sideMenu:
+            days:
+                label: Days
+                url: hmones/conference/days
+                icon: icon-calendar
+            sessions:
+                label: Sessions
+                url: hmones/conference/sessions
+                icon: icon-table

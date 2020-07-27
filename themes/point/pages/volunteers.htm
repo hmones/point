@@ -1,0 +1,25 @@
+title = "Volunteers"
+url = "/volunteers"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+use Hmones\Conference\Models\Volunteer;
+
+public function onStart(){
+    $this['volunteers'] = Volunteer::orderBy('name','asc')->get();
+}
+==
+<div class="ui container">
+    <div class="ui five column wide stackable grid">
+        {% for volunteer in volunteers %}
+            <div class="ui column nopadding">
+                <img class="ui centered center aligned image fr-fic fr-dii" src="{{volunteer.image.getThumb(300,300,{mode:'crop'})}}">
+                <br>
+                <div style="text-align: center;"><strong>{{volunteer.name}}</strong></div>
+                <div style="text-align: center;">{{volunteer.about}}</div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

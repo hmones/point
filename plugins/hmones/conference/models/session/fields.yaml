@@ -1,0 +1,58 @@
+fields:
+    day:
+        label: 'Day of the session'
+        nameFrom: name
+        descriptionFrom: description
+        select: title
+        span: auto
+        required: 1
+        type: relation
+        comment: 'Add a day first from the menu on the left to be able to add sessions to that day'
+    session_header:
+        label: 'Header for the session'
+        span: auto
+        type: text
+        comment: 'e.g. First Session'
+    session_title:
+        label: 'Title of the session'
+        span: auto
+        required: 1
+        type: text
+    from:
+        label: 'Session From'
+        mode: time
+        span: auto
+        required: 1
+        type: datepicker
+    to:
+        label: 'Session To'
+        mode: time
+        span: auto
+        required: 1
+        defaultFrom: from
+        type: datepicker
+    speakers:
+        label: Speakers
+        nameFrom: name
+        descriptionFrom: description
+        span: auto
+        type: relation
+    facilitators:
+        label: Facilitators
+        prompt: 'Add new item'
+        span: auto
+        type: repeater
+        form:
+            fields:
+                name:
+                    label: 'Facilitator Name'
+                    span: auto
+                    type: text
+                link:
+                    label: 'Profile Link'
+                    span: auto
+                    type: text
+                affiliation:
+                    label: Affiliation
+                    span: auto
+                    type: text

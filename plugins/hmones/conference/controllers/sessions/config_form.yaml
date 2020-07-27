@@ -1,0 +1,10 @@
+name: Sessions
+form: $/hmones/conference/models/session/fields.yaml
+modelClass: Hmones\Conference\Models\Session
+defaultRedirect: hmones/conference/sessions
+create:
+    redirect: 'hmones/conference/sessions/update/:id'
+    redirectClose: hmones/conference/sessions
+update:
+    redirect: hmones/conference/sessions
+    redirectClose: hmones/conference/sessions

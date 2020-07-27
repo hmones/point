@@ -1,0 +1,12 @@
+list: $/hmones/conference/models/session/columns.yaml
+modelClass: Hmones\Conference\Models\Session
+title: Sessions
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'hmones/conference/sessions/update/:id'

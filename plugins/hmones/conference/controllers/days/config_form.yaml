@@ -1,0 +1,10 @@
+name: Days
+form: $/hmones/conference/models/day/fields.yaml
+modelClass: Hmones\Conference\Models\Day
+defaultRedirect: hmones/conference/days
+create:
+    redirect: 'hmones/conference/days/update/:id'
+    redirectClose: hmones/conference/days
+update:
+    redirect: hmones/conference/days
+    redirectClose: hmones/conference/days

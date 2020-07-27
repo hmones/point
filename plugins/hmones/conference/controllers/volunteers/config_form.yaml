@@ -1,0 +1,10 @@
+name: Volunteers
+form: $/hmones/conference/models/volunteer/fields.yaml
+modelClass: Hmones\Conference\Models\Volunteer
+defaultRedirect: hmones/conference/volunteers
+create:
+    redirect: 'hmones/conference/volunteers/update/:id'
+    redirectClose: hmones/conference/volunteers
+update:
+    redirect: hmones/conference/volunteers
+    redirectClose: hmones/conference/volunteers
