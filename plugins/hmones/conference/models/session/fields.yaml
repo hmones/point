@@ -33,10 +33,11 @@ fields:
         type: datepicker
     speakers:
         label: Speakers
-        nameFrom: name
-        descriptionFrom: description
-        span: auto
-        type: relation
+        mode: relation
+        separator: comma
+        customTags: 0
+        span: right
+        type: taglist
     facilitators:
         label: Facilitators
         prompt: 'Add new item'
