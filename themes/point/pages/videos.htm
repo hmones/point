@@ -1,0 +1,36 @@
+title = "Videos"
+url = "/videos"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+use Hmones\Conference\Models\Video;
+
+public function onStart(){
+    $this['videos'] = Video::where('header','!=',1)->orderBy('order','asc')->get();
+    $this['headerVideo'] = Video::where('header',1)->orderBy('order','asc')->first();
+}
+==
+<div class="ui container">
+    <h1 class="ui header">{{'Menu.Media'|_}}</h1>
+    {% if headerVideo %}
+        <div class="ui embed" data-source="youtube" data-id="{{headerVideo.link}}" >
+        </div>
+    {% endif %}
+    {% partial 'socialMediaShare' %}
+    <div class="ui three column wide stackable grid">
+        {% for video in videos %}
+            <div class="ui column nopadding">
+                <div class="ui embed" data-source="youtube" data-id="{{video.link}}" >
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% put scripts %}
+<script>
+    $('.ui.embed').embed();
+</script>
+{% endput %}

@@ -33,3 +33,9 @@
 1.0.12:
     - 'Updated table hmones_conference_sessions'
     - builder_table_update_hmones_conference_sessions_5.php
+1.0.13:
+    - 'Created table hmones_conference_videos'
+    - builder_table_create_hmones_conference_videos.php
+1.0.14:
+    - 'Updated table hmones_conference_videos'
+    - builder_table_update_hmones_conference_videos.php

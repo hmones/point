@@ -1,0 +1,16 @@
+fields:
+    link:
+        label: 'Video ID on YouTube'
+        span: auto
+        required: 1
+        type: text
+        comment: 'e.g. O6Xo21L0ybE which appears in the link https://www.youtube.com/watch?v=O6Xo21L0ybE'
+    header:
+        label: 'Display as header?'
+        span: auto
+        type: switch
+    order:
+        label: Order
+        span: auto
+        type: number
+        comment: 'Display order (i.e. 0 would appear on top)'

@@ -68,10 +68,12 @@ public function onStart(){
     });
 </script>
 {% endput %}
-<div class="home hero">
-    <h1 class="ui centered inverted header">{{'HomePage.Header'|_}}</h1>
-    <p class="ui centered inverted header">{{'HomePage.SubHeader'|_}}</p>
-</div>
+<a href="{{'conference'|staticPage}}">
+    <div class="home hero">
+        <h1 class="ui centered inverted header">{{'HomePage.Header'|_}}</h1>
+        <p class="ui centered inverted header">{{'HomePage.SubHeader'|_}}</p>
+    </div>
+</a>
 
 <div class="home slider">
     {% for post in posts %}

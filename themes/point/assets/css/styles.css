@@ -1,9 +1,7 @@
 /*-------------------
     Navigation
 --------------------*/
-.ui.simple.dropdown.item > div.menu {
-    border-top: solid 2px #fdd2ba;
-}
+
 
 .ui.top.fixed.menu.topMainMenu{
     border: none;
@@ -12,21 +10,7 @@
 .socialMediaIcons{
     margin-left:19%;
 }
-.right.menu > div.item > a{
-    color:black;
-    font-weight: bold;
-}
-.right.menu > div.item > a:hover{
-    color:#ed1d24;
-    right:0px;
-}
-.menu>.item>a{
-    color:black;
-    font-weight: normal;
-}
-.menu>.item>a:hover{
-    color:#ed1d24;
-}
+
 .navSearch{
     height: 26px;
     margin-right: 25px;
@@ -42,12 +26,13 @@ div.ui.top.menu.mobileMenu{
 .mobileMenuContent a{
     color:black;
 }
-.mobileMenuContent a:hover{
-    color:#ed1d24;
-}
+
 .mobileMenuContent .ui.simple.dropdown.item:hover{
     background: #ffffff;
 
+}
+div.ui.menu.submenu{
+    background:#1b1c1d !important; 
 }
 div.mobileMenu>div>.right.menu {
     margin-right: 10px;
@@ -118,6 +103,7 @@ div.home.hero{
     line-height: 60vh;
     background-image: url('/themes/point/assets/images/hero.jpg');
     background-color: #000000;
+    background-position: center;
 }
 div.home.hero>h1{
     font-size: 8rem !important;

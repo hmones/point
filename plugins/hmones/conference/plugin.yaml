@@ -26,3 +26,7 @@ navigation:
                 label: Sessions
                 url: hmones/conference/sessions
                 icon: icon-table
+    videos:
+        label: Videos
+        url: hmones/conference/videos
+        icon: icon-video-camera

@@ -14,7 +14,7 @@ categoryPage = "news"
         <h1>{{post.title}}</h1>
     <i class="calendar outline icon"></i> {{post.published_at|date('d F Y')}}
     <br><br>
-    <img src="{{post.featured_images?post.featured_images[0].path:'/themes/point/assets/images/hero.jpg'}}" class="ui image" alt="">
+    <img src="{{post.featured_images[1] ? post.featured_images[1].path:'/themes/point/assets/images/hero.jpg'}}" class="ui image" alt="">
     <div class="ui basic segment">
         {{post.content|md}}
     </div>

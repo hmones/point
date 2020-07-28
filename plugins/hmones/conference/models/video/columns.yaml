@@ -1,0 +1,22 @@
+columns:
+    id:
+        label: id
+        type: number
+    link:
+        label: 'Video ID on YouTube'
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: created_at
+        type: datetime
+        sortable: true
+    header:
+        label: header
+        type: switch
+        sortable: true
+    order:
+        label: 'Display order'
+        type: number
+        searchable: true
+        sortable: true

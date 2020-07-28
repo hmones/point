@@ -1,87 +1,79 @@
 items:
     -
-        title: News
-        nesting: ''
-        type: cms-page
-        url: ''
-        code: ''
-        reference: news
-        cmsPage: ''
-        replace: ''
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: 'Point Conference'
+        title: 'Menu.Point Conference'
         nesting: '0'
         type: static-page
-        url: ''
         code: ''
         reference: conference
-        cmsPage: ''
         replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+        items:
+            -
+                title: Menu.News
+                type: cms-page
+                code: ''
+                reference: news
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Menu.Location
+                nesting: '0'
+                type: static-page
+                code: ''
+                reference: location
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Menu.Participate
+                nesting: '0'
+                type: static-page
+                code: ''
+                reference: participate
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
-        title: 'Program 2020'
-        nesting: '0'
-        type: static-page
-        url: ''
+        title: Menu.Program
+        type: cms-page
         code: ''
         reference: program
-        cmsPage: ''
-        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: Speakers
-        nesting: ''
+        title: Menu.Speakers
         type: cms-page
-        url: ''
         code: ''
         reference: speakers
-        cmsPage: ''
-        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: Location
-        nesting: '0'
-        type: static-page
-        url: ''
-        code: ''
-        reference: location
-        cmsPage: ''
-        replace: '0'
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: Participate
-        nesting: '0'
-        type: static-page
-        url: ''
-        code: ''
-        reference: participate
-        cmsPage: ''
-        replace: '0'
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: Volunteers
+        title: Menu.Volunteers
         type: cms-page
         code: ''
         reference: volunteers
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Menu.Media
+        type: cms-page
+        code: ''
+        reference: videos
         viewBag:
             isHidden: '0'
             cssClass: ''

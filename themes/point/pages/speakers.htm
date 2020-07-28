@@ -13,7 +13,8 @@ public function onStart(){
 }
 ==
 <div class="ui container">
-    <div class="ui centered center aligned basic segment">
+    <h1 class="ui header">{{'Menu.Speakers'|_}}</h1>
+    <div class="ui basic segment">
         <div class="ui breadcrumb">
             {% for year in years %}
                 {% if loop.index != 1 %} <div class="divider"> / </div> {% endif %}
@@ -23,7 +24,6 @@ public function onStart(){
     </div>
     {% for year in years %}
             <a id={{year.year}}></a>
-            <br><br><br>
             <h1 class="ui header">{{year.year}}</h1>
             <div class="ui divider"></div>
             <br>

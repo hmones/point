@@ -1,0 +1,10 @@
+name: Videos
+form: $/hmones/conference/models/video/fields.yaml
+modelClass: Hmones\Conference\Models\Video
+defaultRedirect: hmones/conference/videos
+create:
+    redirect: 'hmones/conference/videos/update/:id'
+    redirectClose: hmones/conference/videos
+update:
+    redirect: hmones/conference/videos
+    redirectClose: hmones/conference/videos
