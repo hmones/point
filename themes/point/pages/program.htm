@@ -28,7 +28,7 @@ public function onStart(){
         <br>
     </div>
     {% for session in day.sessions %}
-        <h3><strong>&nbsp;<i class="clock icon"></i> {{session.session_header}}: {{session.from | date('h:i a')}} - {{session.to | date('h:i a e')}}</strong></h3>
+        <h3><strong>&nbsp;<i class="clock icon"></i> {{session.session_header}}: {{session.from | date('H:i')}} - {{session.to | date('H:i')}}</strong></h3>
 
         <h4><strong>&nbsp;<i class="{{activeLocale == 'ar' ? 'left':'right'}} angel arrow icon"></i> {{session.session_title}}</strong></h4>
         <div class="ui divider">
@@ -56,11 +56,11 @@ public function onStart(){
             <div class="item">
                 <img class="ui avatar image fr-fic fr-dii" src="{{speaker.image.getThumb(50,50,{mode:'crop'})}}">
                 <div class="content">
-                    <a class="header" href="{{'speaker'|page({slug:speaker.name})}}" rel="noopener noreferrer" target="_blank">
+                    <a class="header" href="{{'speaker'|page({slug:speaker.slug})}}" rel="noopener noreferrer" target="_blank">
                         {{speaker.name}}
                     </a>
                     <div class="description">
-                        ({{speaker.organization}})
+                        ({{speaker.organization}} - {{speaker.country}})
                     </div>
                 </div>
             </div>
